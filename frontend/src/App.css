@@ -1,0 +1,159 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #2c2f33;
+  margin: 0;
+  padding: 0;
+  color: #ddd;
+}
+
+.header {
+  background-color: #23272a;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #36393f;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.wallet-info {
+  margin: 20px 0;
+  padding: 20px;
+  background: #1c242f;
+  border-radius: 10px;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  padding: 20px;
+  background: #40444b;
+  border: 1px solid #2c2f33;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card input {
+  padding: 12px;
+  border: 1px solid #2c2f33;
+  border-radius: 5px;
+  width: calc(100% - 140px);
+  margin-right: 10px;
+  font-size: 1em;
+  color: #ddd;
+  background-color: #2c2f33;
+}
+
+.datapicker input {
+  padding: 12px;
+  border: 1px solid #2c2f33;
+  border-radius: 5px;
+  width: calc(100% - 140px);
+  margin-right: 10px;
+  font-size: 1em;
+  color: #ddd;
+  background-color: #2c2f33;
+  width: 100%;
+}
+
+.card button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  background: #7289da;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.card button:hover {
+  background: #5b6eae;
+}
+
+.token-watch-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.token-watch-list li {
+  margin: 10px 0;
+  padding: 15px;
+  border-bottom: 1px solid #2c2f33;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.token-watch-list li button {
+  padding: 8px 16px;
+  background: #e53e3e;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.token-watch-list li button:hover {
+  background: #c53030;
+}
+
+.chart-container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #40444b;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.wallet-input {
+  display: flex;
+}
+
+.or-divider {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+
+.metamask-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metamask-button button {
+  width: 50vw;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+}
+
