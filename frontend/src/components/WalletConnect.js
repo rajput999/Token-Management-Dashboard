@@ -26,10 +26,11 @@ const WalletConnect = ({ setWalletAddress }) => {
 
   const handleInputChange = (e) => {
     setInputAddress(e.target.value);
+    console.log(balance);
   };
 
   const submitAddress = async () => {
-    if(inputAddress.length==0){
+    if(inputAddress.length===0){
       alert("Input address can't be empty");
       return ;
     }
