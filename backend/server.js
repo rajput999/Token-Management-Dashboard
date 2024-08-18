@@ -22,6 +22,11 @@ mongoose.connect(process.env.MONGO_URI, {
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.log(err));
 
+// Base URL route
+app.get('/', (req, res) => {
+  res.send('Hello');
+});
+
 // Routes
 app.use('/api/watchlist', require('./routes/watchlistRoutes'));
 
