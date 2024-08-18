@@ -33,12 +33,12 @@ export const ethersService = {
 
   // New service methods
   fetchWatchList: async (walletAddress) => {
-    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/watchlist/${walletAddress}`);
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}api/watchlist/${walletAddress}`);
     return await response.json();
   },
 
   addToWatchList: async (walletAddress, token) => {
-    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/watchlist/add`, {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}api/watchlist/add`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ walletAddress, token }),
@@ -47,7 +47,7 @@ export const ethersService = {
   },
 
   removeFromWatchList: async (walletAddress, token) => {
-    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/watchlist/remove`, {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}api/watchlist/remove`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ walletAddress, token }),
