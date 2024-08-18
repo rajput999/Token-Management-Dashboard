@@ -7,20 +7,20 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(express.json());
-app.use(cors({
-  origin: ['http://localhost:3000', 'https://token-management-dashboard-gwn1-git-deploy-rajput999s-projects.vercel.app'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,
-}));
+// app.use(express.json());
+// app.use(cors({
+//   origin: ['http://localhost:3000', 'https://token-management-dashboard-gwn1-git-deploy-rajput999s-projects.vercel.app'],
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   credentials: true,
+// }));
 
-// Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log('MongoDB connected'))
-.catch(err => console.log(err));
+// // Connect to MongoDB
+// mongoose.connect(process.env.MONGO_URI, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// })
+// .then(() => console.log('MongoDB connected'))
+// .catch(err => console.log(err));
 
 // Base URL route
 app.get('/', (req, res) => {
