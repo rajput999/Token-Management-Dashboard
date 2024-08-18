@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require('cors');  // Import cors
+const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
@@ -17,7 +17,6 @@ const allowedOrigins = [
 
 app.use(cors({
   origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps, curl requests)
     if (!origin) return callback(null, true);
     if (allowedOrigins.indexOf(origin) === -1) {
       const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
@@ -25,8 +24,8 @@ app.use(cors({
     }
     return callback(null, true);
   },
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
-  credentials: true, // Enable Access-Control-Allow-Credentials
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
 }));
 
 // Connect to MongoDB
@@ -40,6 +39,12 @@ mongoose.connect(process.env.MONGO_URI, {
 // Routes
 app.use('/api/watchlist', require('./routes/watchlistRoutes'));
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// Start the server (only if running locally or during development)
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+}
+
+// Export the app for Vercel
+module.exports = app;
