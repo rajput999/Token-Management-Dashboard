@@ -13,8 +13,8 @@ const HistoricalData = ({ walletAddress }) => {
   const fetchHistoricalData = async () => {
     try {
       const data = await ethersService.getHistoricalData(walletAddress, startDate, endDate);
-      console.log(data)
       setHistoricalData(data);
+      console.log(historicalData);
     } catch (error) {
       console.error('Error fetching historical data:', error);
     }
