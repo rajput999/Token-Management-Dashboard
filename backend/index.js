@@ -6,7 +6,7 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
+// // Middleware
 // app.use(express.json());
 // app.use(cors({
 //   origin: ['http://localhost:3000', 'https://token-management-dashboard-gwn1-git-deploy-rajput999s-projects.vercel.app'],

@@ -4,8 +4,8 @@
     "description": "Backend server for token management SPA",
     "main": "server.js",
     "scripts": {
-      "server": "node server.js",
-      "start": "node server.js"
+      "server": "node index.js",
+      "start": "node index.js"
     },
     "dependencies": {
       "express": "^4.17.1",
