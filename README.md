@@ -4,6 +4,10 @@
 
 Crypto-Portfolio App is a single-page application (SPA) that allows users to manage and monitor their cryptocurrency portfolio. Users can add tokens to their watch list, view current and historical balances, check token allowances, and perform token operations like transfers and approvals.
 
+## Live Demo
+
+[View the live demo here]([https://your-app-name.netlify.app](https://token-management-dashboard-gwn1.vercel.app/))
+
 ## Features
 
 - Connect wallet MetaMask or input wallet address
@@ -50,8 +54,3 @@ Crypto-Portfolio App is a single-page application (SPA) that allows users to man
 4. Use the date picker to view historical balances.
 5. Check token allowances for specific smart contracts.
 6. Transfer tokens by entering the recipient's address and the amount.
-
-
-## Live Demo
-
-[View the live demo here](https://your-app-name.netlify.app) (Coming soon)
