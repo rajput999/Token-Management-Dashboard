@@ -6,7 +6,7 @@ Crypto-Portfolio App is a single-page application (SPA) that allows users to man
 
 ## Live Demo
 
-[View the live demo here](https://token-management-dashboard-gwn1-git-deploy-rajput999s-projects.vercel.app/)
+[View the live demo here](https://token-management-dashboard-gwn1.vercel.app/)
 
 ## Features
 
