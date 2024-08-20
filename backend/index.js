@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://token-management-dashboard-gwn1-git-deploy-rajput999s-projects.vercel.app'],
+  origin: ['http://localhost:3000', 'https://token-management-dashboard-gwn1.vercel.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
