@@ -9,9 +9,9 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://token-management-dashboard-gwn1.vercel.app'],
+  origin: '*',  // Allow requests from any origin
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,
+  credentials: true,  // This allows cookies and HTTP authentication
 }));
 
 // Connect to MongoDB
