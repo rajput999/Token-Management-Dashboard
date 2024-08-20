@@ -26,7 +26,6 @@ const TokenWatchList = ({ walletAddress }) => {
 
   const addToken = async () => {
     try {
-      console.log("Resolving ENS address:", newTokenAddress);
       const resolvedAddress = await provider.resolveName(newTokenAddress);
 
       if (!resolvedAddress) {
@@ -34,13 +33,12 @@ const TokenWatchList = ({ walletAddress }) => {
         return;
       }
 
-      if (tokens.includes(resolvedAddress)) {
-        alert("Token is already in the watch list.");
-        setNewTokenAddress("");
-        return;
-      }
+      // if (tokens.some(token => token.token === resolvedAddress)) {
+      //   alert("Token is already in the watch list.");
+      //   setNewTokenAddress("");
+      //   return;
+      // }
 
-      console.log("Resolved address:", resolvedAddress);
       const updatedList = await ethersService.addToWatchList(walletAddress, resolvedAddress);
       setTokens(updatedList.tokens);
       setNewTokenAddress("");
@@ -51,7 +49,7 @@ const TokenWatchList = ({ walletAddress }) => {
 
   const removeToken = async (token) => {
     try {
-      const updatedList = await ethersService.removeFromWatchList(walletAddress, token);
+      const updatedList = await ethersService.removeFromWatchList(walletAddress, token.token);
       setTokens(updatedList.tokens);
     } catch (error) {
       console.error("Failed to remove token:", error);
@@ -61,8 +59,8 @@ const TokenWatchList = ({ walletAddress }) => {
   useEffect(() => {
     tokens.forEach(async (token) => {
       try {
-        const balance = await ethersService.getTokenBalance(walletAddress, token);
-        setBalances((prev) => ({ ...prev, [token]: balance }));
+        const balance = await ethersService.getTokenBalance(walletAddress, token.token);
+        setBalances((prev) => ({ ...prev, [token.token]: balance }));
       } catch (error) {
         console.error("Failed to fetch token balance:", error);
       }
@@ -72,17 +70,17 @@ const TokenWatchList = ({ walletAddress }) => {
   return (
     <div className="card">
       <h2>Token Watch List</h2>
-      <input 
-        type="text" 
-        placeholder="Token Address or ENS" 
-        value={newTokenAddress} 
-        onChange={(e) => setNewTokenAddress(e.target.value)} 
+      <input
+        type="text"
+        placeholder="Token Address or ENS"
+        value={newTokenAddress}
+        onChange={(e) => setNewTokenAddress(e.target.value)}
       />
       <button onClick={addToken}>Add Token</button>
       <ul>
-        {tokens.map((token) => (
-          <li key={token}>
-            {token}: {balances[token] || "Loading..."} 
+        {tokens.map((token, index) => (
+          <li key={index}>
+            {token.token}: {balances[token.token] || "Loading..."}
             <button onClick={() => removeToken(token)}>Remove</button>
           </li>
         ))}
